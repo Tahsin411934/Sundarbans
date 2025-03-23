@@ -75,14 +75,14 @@ const Header = () => {
 
               <div className="ml-3 hidden lg:flex items-center justify-center gap-2">
                 <div className="flex items-center ">
-                  <a
+                  <Link
                     href={`tel:${contactNumber?.[0]?.value}`}
                     className="ml-[10px] mt-[9px]"
                   >
                     <div className="phone-call md:w-[50px] md:h-[50px] w-[36px] h-[36px] ml-[15px]">
                       <FaPhone className="md:ml-[17px] md:mt-[17px] mt-[8px] ml-[11px]" />
                     </div>
-                  </a>
+                  </Link>
                   <Link
                     href={`https://wa.me/${contactNumber[0]?.value}`}
                     className=" mx-[10px]"
