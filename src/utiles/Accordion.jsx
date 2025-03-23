@@ -88,7 +88,7 @@ const AccordionBookMe = ({ facilities = { facilities: [] } }) => {
               stickyTitle.style.width = window.innerWidth <= 500 ? "100%" : "56%"; // Adjust to your requirement
               stickyTitle.style.backgroundColor = "white";
               stickyTitle.style.zIndex = "50";
-              stickyTitle.style.transition = "all 0.6s ease, box-shadow 0.6s ease";
+              stickyTitle.style.transition = "all 1s ease, box-shadow 1s ease";
               stickyTitle.dataset.sticky = "true";
             } else {
               stickyTitle.style.position = "";
@@ -97,7 +97,7 @@ const AccordionBookMe = ({ facilities = { facilities: [] } }) => {
               stickyTitle.style.backgroundColor = "";
               stickyTitle.style.zIndex = "";
               stickyTitle.style.boxShadow = "";
-              stickyTitle.style.transition = "all 0.6s ease, box-shadow 0.6s ease";
+              stickyTitle.style.transition = "all 1s ease, box-shadow 1s ease";
               stickyTitle.dataset.sticky = "false";
             }
           } else {
@@ -109,7 +109,7 @@ const AccordionBookMe = ({ facilities = { facilities: [] } }) => {
               stickyTitle.style.backgroundColor = "";
               stickyTitle.style.zIndex = "";
               stickyTitle.style.boxShadow = "";
-              stickyTitle.style.transition = "all 0.6s ease, box-shadow 0.6s ease";
+              stickyTitle.style.transition = "all 1s ease, box-shadow 1s ease";
               stickyTitle.dataset.sticky = "false";
             }
           }
