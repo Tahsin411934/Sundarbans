@@ -9,12 +9,17 @@ import { useForm } from "react-hook-form";
 import { useSearch } from "@/SearchContext";
 import getContactNumber from "@/utiles/getContactNumber";
 import { FaPhone, FaWhatsapp } from "react-icons/fa";
+import { usePagination } from "@/utiles/usePagination";
 const roboto = Roboto({ subsets: ["latin"], weight: ["400"] });
-
 const Header = () => {
   const { searchTerm, setSearchTerm } = useSearch();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [contactNumber, setContactNumber] = useState([]);
+  const { currentPage, handlePageChange } = usePagination();
+  const handleClick = () => {
+    handlePageChange(1);
+     // Reset pagination before navigating home
+  };
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
@@ -44,16 +49,19 @@ const Header = () => {
         <div className="header-bottom  text-[#00026E]  ">
           <div className="container  w-[95%] lg:w-[84%]  mx-auto">
             <div className="flex justify-between items-center py-2">
-              {/* Logo */}
+             
               <div className="logo">
-                <Link href="/">
+                <Link 
+                href={"/"}
+                    onClick={handleClick}
+className="cursor-pointer"
+                >
                   <Image
-                    src="/assets/images/Sundarbans.png" // Adjust the path based on your public folder structure
+                     src="/assets/images/Sundarbans.png" // Adjust the path based on your public folder structure
                     alt="logo"
-                    width={190}
-                    height={60}
+                    width="190"
+                    height="60"
                     className="changeLogo"
-                    style={{ backgroundColor: "white", color: "white" }}
                   />
                 </Link>
               </div>
@@ -76,7 +84,7 @@ const Header = () => {
               <div className="ml-3 hidden lg:flex items-center justify-center gap-2">
                 <div className="flex items-center ">
                   <a
-                    href={`tel:${contactNumber?.[0]?.value}`} // Use the `tel:` protocol
+                    href={`tel:${contactNumber?.Phone}`} // Use the `tel:` protocol
                     className="ml-[10px] mt-[9px]"
                   >
                     <div className="phone-call md:w-[50px] md:h-[50px] w-[36px] h-[36px] ml-[15px]">
@@ -84,7 +92,7 @@ const Header = () => {
                     </div>
                   </a>
                   <Link
-                    href={`https://wa.me/${contactNumber[0]?.value}`}
+                    href={`https://wa.me/${contactNumber?.Phone}`}
                     className=" mx-[10px]"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -98,7 +106,7 @@ const Header = () => {
                     <p className="text-sm text-gray-900">Call Anytime</p>
                     <h4 className="text-lg font-semibold">
                       <a href="#" className="text-gray-800">
-                        {contactNumber[0]?.value?.slice(3)}
+                        {contactNumber?.Phone?.slice(3)}
                       </a>
                     </h4>
                   </div>
@@ -107,20 +115,21 @@ const Header = () => {
               {/* Mobile Menu Icon */}
               <div className="lg:hidden flex items-center mt-[10px]">
                 <span className="text-[8px] md:text-[16px]">Call any time</span>
-                <Link
+                <a
                   target="_blank"
-                  rel="noopener noreferrer"
-                  href={`https://wa.me/${contactNumber[0]?.value}`}
+                  
+                  href={`tel:${contactNumber?.Phone}`} 
                   className="w-[38px] h-[38px] mt-[-5px]"
                 >
                   <div className="phone-call md:w-[50px] md:h-[50px] w-[36px] h-[36px]  ml-[15px]">
+                  
                     <FaPhone className="i md:ml-[15px] md:mt-[15px] mt-[9px] ml-[10px]" />
                   </div>
-                </Link>
+                </a>
                 <Link
                   target="_blank"
                   rel="noopener noreferrer"
-                  href={`https://wa.me/${contactNumber[0]?.value}`}
+                  href={`https://wa.me/${contactNumber?.Phone}`}
                   className="w-[38px] h-[38px] mx-[20px] mt-[-5px]"
                 >
                   <span className="btn-whatsapp-pulse btn-whatsapp-pulse-border md:w-[50px] md:h-[50px] w-[36px] h-[36px]  ml-[15px]">

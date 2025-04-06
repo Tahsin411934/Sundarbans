@@ -21,34 +21,35 @@ body {
   padding: 0;
 }
 
+/* 
 .sticky1 {
 	position: fixed;
-	top: 9px; /* Adjust this value based on your header height */
+	top: 82px; 
 	width: 58%;
 	z-index: 1000;
 	margin-left: -16px;
 	padding-top: 7px;
 	padding-bottom: 7px;
 	border-radius: 7px;
-	background-color: white; /* Ensure the background is visible */
-	transition: all 0.6s ease; /* Smooth transition for all properties */
-	 /* Optional: Add a subtle shadow for better visibility */
+	background-color: white; 
+	transition: all 0.6s ease; 
 }
   @media screen and (max-width:500px) {
 	.sticky1{
 		width: 100%;
 		margin-top: -20px;
+		top:80px
 
 	}
   }
 
   .sticky-section {
 	position: sticky;
-	top: 0; /* সেকশনটি পৃষ্ঠার উপরের দিকে স্টিকি হবে */
+	top: 0; 
 	background-color: #f4f4f4;
 	padding: 10px;
 	border: 1px solid #ddd;
-  }
+  } */
 @font-face {
   font-family: 'heading';
   src: url('/fonts/LuxiaRegular.ttf') format('ttf');
@@ -78,9 +79,11 @@ body {
   position: absolute;
   bottom: 15px;
   left: 50%;
-  transform: translateX(-4%);
+  transform: translateX(0%);
   z-index: 50 !important;
   pointer-events: auto !important;
+  
+  
 }
 
  .swiper-pagination-bullet {
@@ -104,7 +107,8 @@ body {
   position: absolute;
   bottom: 15px;
   left: 50%;
-  transform: translateX(-4%);
+ display: flex;
+ justify-content: center;
   z-index: 50 !important;
   pointer-events: auto !important;
 }
@@ -166,6 +170,7 @@ body {
 	transform: scaleX(-1);
 	
   }
+ 
   .phone-call:before {
 	position: absolute;
 	content: " ";
@@ -187,6 +192,15 @@ body {
 	animation: pulse 1.8s ease-out;
 	-webkit-animation-iteration-count: infinite;
 	animation-iteration-count: infinite;
+  }
+  @media screen and (max-width:1000px) {
+	.phone-call:before {
+		top: -2px;
+		left: -2px;
+		width: 56px;
+	height: 56px;
+	}
+	
   }
   html, body {
 	scroll-behavior: auto !important;
@@ -577,4 +591,18 @@ body {
 	  opacity: 0;
 	}
   }
-  
+@media screen and (max-width: 1000px) {
+	@keyframes pulse-border {
+		0% {
+			padding: 20px;
+			opacity: 0.65;
+		}
+		75% {
+			padding: 25px;
+			opacity: 0;
+		}
+		100% {
+			opacity: 0;
+		}
+	}
+}

@@ -44,7 +44,7 @@ export default function Banner() {
         </SwiperSlide>
         <SwiperSlide className="w-[100%] h-[100%]">
           <Image
-            src="/assets/images/gallery/home-slider-top/slider3.png"
+            src="/assets/images/gallery/home-slider-top/slider3.jpg"
             alt="Slide 3"
             fill
             className="object-cover md:object-fill w-full h-full"
