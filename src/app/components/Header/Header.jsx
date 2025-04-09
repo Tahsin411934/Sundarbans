@@ -57,7 +57,7 @@ const Header = () => {
 className="cursor-pointer"
                 >
                   <Image
-                     src="/assets/images/Sundarbans.png" // Adjust the path based on your public folder structure
+                    src="/assets/images/Sundarbans.png" // Adjust the path based on your public folder structure
                     alt="logo"
                     width="190"
                     height="60"
@@ -93,7 +93,7 @@ className="cursor-pointer"
                   </a>
                   <Link
                     href={`https://wa.me/${contactNumber?.Phone}`}
-                    className=" mx-[10px]"
+                    className=" mr-[10px] ml-[-5px]"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
